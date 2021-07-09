@@ -10,6 +10,12 @@ class Article extends Model
 {
     use HasFactory;
 
+    //fillableの利用
+    protected $fillable = [
+        'title',
+        'body',
+    ];
+
     //リレーション
     public function user(): BelongsTo{
         return $this->belongsTo('App\Models\User');
