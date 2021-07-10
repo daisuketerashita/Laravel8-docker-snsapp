@@ -8,6 +8,12 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
+
+    //ポリシー
+    public function __construct(){
+        $this->authorizeResource(Article::class, 'article');
+    }
+
     //記事一覧表示
     public function index(){
         $articles = Article::all()->sortByDesc('created_at');
