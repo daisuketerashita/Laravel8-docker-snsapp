@@ -28,4 +28,9 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index');
     }
+
+    //記事編集画面表示
+    public function edit(Article $article){
+        return view('articles.edit',['article' => $article]);
+    }
 }
