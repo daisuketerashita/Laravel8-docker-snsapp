@@ -24,7 +24,13 @@ class ArticleController extends Controller
 
     //記事投稿画面表示
     public function create(){
-        return view('articles.create');
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+
+        return view('articles.create', [
+            'allTagNames' => $allTagNames,
+        ]);
     }
 
     //新規記事の登録処理
@@ -47,9 +53,14 @@ class ArticleController extends Controller
             return ['text' => $tag->name];
         });
 
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+
         return view('articles.edit',[
             'article' => $article,
             'tagNames' => $tagNames,
+            'allTagNames' => $allTagNames,
         ]);
     }
 
