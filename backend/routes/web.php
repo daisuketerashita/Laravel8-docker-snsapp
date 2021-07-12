@@ -21,3 +21,8 @@ Route::resource('articles',ArticleController::class)->except(['index','show'])->
 Route::resource('articles',ArticleController::class)->only(['show']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('articles')->name('articles.')->group(function () {
+    Route::put('/{article}/like', 'ArticleController@like')->name('like')->middleware('auth');
+    Route::delete('/{article}/like', 'ArticleController@unlike')->name('unlike')->middleware('auth');
+});
