@@ -6,6 +6,7 @@
  import './bootstrap'
  import Vue from 'vue'
  import ArticleLike from './components/ArticleLike'
+ import ArticleTagsInput from './components/ArticleTagsInput'
 
 window.Vue = require('vue').default;
 
@@ -32,5 +33,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
     el: '#app',
     components: {
       ArticleLike,
+      ArticleTagsInput,
     }
   })
