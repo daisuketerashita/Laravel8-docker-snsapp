@@ -7,6 +7,7 @@
  import Vue from 'vue'
  import ArticleLike from './components/ArticleLike'
  import ArticleTagsInput from './components/ArticleTagsInput'
+ import FollowButton from './components/FollowButton'
 
 window.Vue = require('vue').default;
 
@@ -34,5 +35,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
     components: {
       ArticleLike,
       ArticleTagsInput,
+      FollowButton,
     }
   })
